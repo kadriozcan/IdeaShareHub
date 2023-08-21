@@ -1,6 +1,7 @@
 ﻿using Entity;
 using Entity.Concrete;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace DataAccess.Concrete
 {
@@ -12,5 +13,10 @@ namespace DataAccess.Concrete
         public DbSet<Content> Contents { get; set; }
         public DbSet<Topic> Topics { get; set; }
         public DbSet<Writer> Writers { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+        }
     }
 }
