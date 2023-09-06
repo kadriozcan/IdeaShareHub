@@ -24,5 +24,17 @@ namespace IdeaShareHub.Controllers
             List<Category> categories = categoryManager.GetAll();
             return View(categories);
         }
+
+        [HttpGet]
+        public ActionResult Add()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Add(Category category)
+        {
+            categoryManager.Add(category);
+            return RedirectToAction("GetAll");
+        }
     }
 }
