@@ -1,14 +1,32 @@
-﻿
+﻿@model Entity.Concrete.Category
+
 @{
     Layout = null;
 }
 <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
 <h1>New Category</h1>
 <br />
-<form class="form-group" method="post">
-    <input type="text" placeholder="Name" class="form-control" name="Name"/>
-    <br />
-    <input type="text" placeholder="Description" class="form-control" name="Description" />
-    <br />
-    <button class="btn btn-primary">Submit</button>
-</form>
+
+@using (Html.BeginForm("Add", "Category", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Category Name")
+        @Html.TextBoxFor(c => c.Name)
+        @Html.ValidationMessageFor(c=>c.Name)
+        <br />
+        @Html.Label("Description")
+        @Html.TextBoxFor(c => c.Description)
+        @Html.ValidationMessageFor(c=>c.Description)
+        <br />
+        <button>Save</button>
+    </div>
+}
+
+
+@*<form class="form-group" method="post">
+        <input type="text" placeholder="Name" class="form-control" name="Name"/>
+        <br />
+        <input type="text" placeholder="Description" class="form-control" name="Description" />
+        <br />
+        <button class="btn btn-primary">Submit</button>
+    </form>*@

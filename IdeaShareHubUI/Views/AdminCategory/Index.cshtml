@@ -1,0 +1,33 @@
+﻿@using Entity.Concrete
+@model List<Category>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Delete</th>
+        <th>Update</th>
+        <th>Topics</th>
+    </tr>
+    @foreach (Category category in Model)
+    {
+        <tr>
+            <th>@category.Id</th>
+            <td>@category.Name</td>
+            <td>@category.Description</td>
+            <td><a href="/AdminCategory/Delete/@category.Id" class="btn btn-danger">Delete</a></td>
+            <td><a class="btn btn-success">Update</a></td>
+            <td><a class="btn btn-primary">Topics</a></td>
+        </tr>
+    }
+</table>
+<a href="/AdminCategory/Add" class="btn" style="background-color:cadetblue;color:white;">Add New Category</a>
+

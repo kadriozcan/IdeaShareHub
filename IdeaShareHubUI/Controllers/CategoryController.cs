@@ -1,5 +1,9 @@
-﻿using Business.Concrete;
+﻿using Business.Abstract;
+using Business.Concrete;
+using Business.ValidationRules.FluentValidation;
+using DataAccess.Concrete.EntityFramework;
 using Entity.Concrete;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +15,9 @@ namespace IdeaShareHub.Controllers
     public class CategoryController : Controller
     {
 
-        CategoryManager categoryManager = new CategoryManager();
+        CategoryManager _categoryManager = new CategoryManager(new EfCategoryDal());
+
+
 
         // GET: Category
         public ActionResult Index()
@@ -21,7 +27,7 @@ namespace IdeaShareHub.Controllers
 
         public ActionResult GetAll()
         {
-            List<Category> categories = categoryManager.GetAll();
+            List<Category> categories = _categoryManager.GetAll();
             return View(categories);
         }
 
@@ -30,10 +36,23 @@ namespace IdeaShareHub.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult Add(Category category)
         {
-            categoryManager.Add(category);
+            CategoryValidator validator = new CategoryValidator();
+            ValidationResult result = validator.Validate(category);
+            if (result.IsValid)
+            {
+                _categoryManager.Add(category);
+            }
+            else
+            {
+                foreach(var error in result.Errors)
+                {
+                    ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
+                }
+            }
             return RedirectToAction("GetAll");
         }
     }

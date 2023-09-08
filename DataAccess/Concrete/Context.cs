@@ -7,6 +7,12 @@ namespace DataAccess.Concrete
 {
     public class Context : DbContext
     {
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+        }
+
+
         public DbSet<About> Abouts { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Contact> Contacts { get; set; }
@@ -14,9 +20,6 @@ namespace DataAccess.Concrete
         public DbSet<Topic> Topics { get; set; }
         public DbSet<Writer> Writers { get; set; }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
-        }
+        
     }
 }
