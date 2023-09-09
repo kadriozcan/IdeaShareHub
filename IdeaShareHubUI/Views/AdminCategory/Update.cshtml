@@ -1,0 +1,26 @@
+﻿@using Entity.Concrete
+@model Category
+
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Update @Model.Name Category</h2>
+
+@using (Html.BeginForm("Update", "AdminCategory", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Category Name")
+        @Html.TextBoxFor(c => c.Name, new {@class = "form-control"})
+        @Html.ValidationMessageFor(c => c.Name)
+        <br />
+        @Html.Label("Description")
+        @Html.TextAreaFor(c => c.Description, new { @class = "form-control" })
+        @Html.ValidationMessageFor(c => c.Description)
+        <br />
+        <button class="btn btn-info">Save</button>
+    </div>
+}
+

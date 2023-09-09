@@ -31,7 +31,22 @@ namespace Business.Concrete
 
         public Category GetById(int id)
         {
-           return _categoryDal.GetByFilter(x=>x.Id == id);
+            return _categoryDal.GetByFilter(x => x.Id == id);
+        }
+
+        public void Delete(Category category)
+        {
+            _categoryDal.Delete(category);
+        }
+
+        public void Update(Category category)
+        {
+            _categoryDal.Update(category);
+        }
+
+        public int GetNumberOfCategories()
+        {
+            return _categoryDal.GetAll().Count();
         }
     }
 }

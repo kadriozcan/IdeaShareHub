@@ -49,7 +49,22 @@ namespace IdeaShareHub.Controllers
         public ActionResult Delete(int id)
         {
             Category category = categoryManager.GetById(id);
-            return View();
+            categoryManager.Delete(category);
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult Update(int id)
+        {
+            Category category = categoryManager.GetById(id);
+            return View(category);
+        }
+
+        [HttpPost]
+        public ActionResult Update(Category category)
+        {
+            categoryManager.Update(category);
+            return RedirectToAction("Index");
         }
     }
 }

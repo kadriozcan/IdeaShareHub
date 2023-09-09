@@ -13,9 +13,9 @@
         <th>#</th>
         <th>Name</th>
         <th>Description</th>
-        <th>Delete</th>
-        <th>Update</th>
         <th>Topics</th>
+        <th>Update</th>
+        <th>Delete</th>
     </tr>
     @foreach (Category category in Model)
     {
@@ -23,9 +23,9 @@
             <th>@category.Id</th>
             <td>@category.Name</td>
             <td>@category.Description</td>
-            <td><a href="/AdminCategory/Delete/@category.Id" class="btn btn-danger">Delete</a></td>
-            <td><a class="btn btn-success">Update</a></td>
             <td><a class="btn btn-primary">Topics</a></td>
+            <td><a href="/AdminCategory/Update/@category.Id" class="btn btn-success">Update</a></td>
+            <td><a href="/AdminCategory/Delete/@category.Id" class="btn btn-danger">Delete</a></td>
         </tr>
     }
 </table>
