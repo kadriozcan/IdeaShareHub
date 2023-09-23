@@ -15,7 +15,7 @@ namespace IdeaShareHub.Controllers
     public class CategoryController : Controller
     {
 
-        CategoryManager _categoryManager = new CategoryManager(new EfCategoryDal());
+        private readonly CategoryManager _categoryManager = new CategoryManager(new EfCategoryDal());
 
 
 

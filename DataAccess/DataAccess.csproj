@@ -54,7 +54,7 @@
     <Compile Include="Abstract\IAboutDal.cs" />
     <Compile Include="Abstract\ICategoryDal.cs" />
     <Compile Include="Abstract\IContactDal.cs" />
-    <Compile Include="Abstract\IContentDal.cs" />
+    <Compile Include="Abstract\IEntryDal.cs" />
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Abstract\ITopicDal.cs" />
     <Compile Include="Abstract\IWriterDal.cs" />
@@ -62,9 +62,46 @@
     <Compile Include="Concrete\EntityFramework\EfAboutDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfCategoryDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfContactDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfEntryDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfTopicDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfWriterDal.cs" />
     <Compile Include="Concrete\Repositories\EfRepositoryBase.cs" />
+    <Compile Include="Migrations\202309101254143_initial.cs" />
+    <Compile Include="Migrations\202309101254143_initial.designer.cs">
+      <DependentUpon>202309101254143_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309101258312_categoryinitial.cs" />
+    <Compile Include="Migrations\202309101258312_categoryinitial.designer.cs">
+      <DependentUpon>202309101258312_categoryinitial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309101259418_categoryidremove.cs" />
+    <Compile Include="Migrations\202309101259418_categoryidremove.designer.cs">
+      <DependentUpon>202309101259418_categoryidremove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309101444073_writer_title_add.cs" />
+    <Compile Include="Migrations\202309101444073_writer_title_add.designer.cs">
+      <DependentUpon>202309101444073_writer_title_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309131753119_writer_image_length.cs" />
+    <Compile Include="Migrations\202309131753119_writer_image_length.designer.cs">
+      <DependentUpon>202309131753119_writer_image_length.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309141223229_writer_status.cs" />
+    <Compile Include="Migrations\202309141223229_writer_status.designer.cs">
+      <DependentUpon>202309141223229_writer_status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309141256479_conternt_entry.cs" />
+    <Compile Include="Migrations\202309141256479_conternt_entry.designer.cs">
+      <DependentUpon>202309141256479_conternt_entry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309201546393_entry_status_added.cs" />
+    <Compile Include="Migrations\202309201546393_entry_status_added.designer.cs">
+      <DependentUpon>202309201546393_entry_status_added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309201550155_topicstatusadded.cs" />
+    <Compile Include="Migrations\202309201550155_topicstatusadded.designer.cs">
+      <DependentUpon>202309201550155_topicstatusadded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -78,7 +115,35 @@
       <Name>Entity</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202309101254143_initial.resx">
+      <DependentUpon>202309101254143_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309101258312_categoryinitial.resx">
+      <DependentUpon>202309101258312_categoryinitial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309101259418_categoryidremove.resx">
+      <DependentUpon>202309101259418_categoryidremove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309101444073_writer_title_add.resx">
+      <DependentUpon>202309101444073_writer_title_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309131753119_writer_image_length.resx">
+      <DependentUpon>202309131753119_writer_image_length.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309141223229_writer_status.resx">
+      <DependentUpon>202309141223229_writer_status.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309141256479_conternt_entry.resx">
+      <DependentUpon>202309141256479_conternt_entry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309201546393_entry_status_added.resx">
+      <DependentUpon>202309201546393_entry_status_added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309201550155_topicstatusadded.resx">
+      <DependentUpon>202309201550155_topicstatusadded.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

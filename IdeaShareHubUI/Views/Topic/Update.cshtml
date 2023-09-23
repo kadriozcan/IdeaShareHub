@@ -1,0 +1,27 @@
+﻿@model Entity.Concrete.Topic
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Update</h2>
+<br />
+@using (Html.BeginForm("Update", "Topic", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("ID")
+        @Html.TextBoxFor(t => t.Id, new { @class = "form-control" })
+        <br />
+        @Html.Label("Name")
+        @Html.TextBoxFor(t => t.Name, new { @class = "form-control" })
+        <br />
+        @Html.Label("Writer ID")
+        @Html.TextBoxFor(t => t.WriterId, new { @class = "form-control" })
+        <br />
+        @Html.Label("Category")
+        @Html.DropDownListFor(t => t.CategoryId, (List<SelectListItem>)ViewBag.CategoryValues, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-info">Save</button>
+    </div>
+}
+

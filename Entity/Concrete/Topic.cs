@@ -8,9 +8,13 @@ namespace Entity.Concrete
     {
         [Key]
         public int Id { get; set; }
+
         [StringLength(50)]
         public string Name { get; set; }
+
         public DateTime CreatedAt { get; set; }
+
+        public bool Status { get; set; }
 
         // foreign key that relates this topic to a specific category.
         public int CategoryId { get; set; }
@@ -20,7 +24,7 @@ namespace Entity.Concrete
         public int WriterId { get; set; }
         public virtual Writer Writer { get; set; }
 
-        public ICollection<Content> Contents { get; set; }
+        public ICollection<Entry> Contents { get; set; }
 
 
     }

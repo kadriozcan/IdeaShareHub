@@ -11,16 +11,29 @@ namespace Entity.Concrete
     {
         [Key]
         public int Id { get; set; }
+
         [StringLength(50)]
         public string Username { get; set; }
-        [StringLength(100)]
+
+        [StringLength(250)]
         public string Image { get; set; }
-        [StringLength(500)]
+
+        [StringLength(200)]
         public string Email { get; set; }
-        [StringLength(20)]
+
+        [StringLength(200)]
         public string Password { get; set; }
 
+        [StringLength(100)]
+        public string AboutWriter { get; set; }
+
+        [StringLength(50)]
+        public string Title { get; set; }
+
+        public bool Status { get; set; }
+
         public ICollection<Topic> Topics { get; set; }
-        public ICollection<Content> Contents { get; set; }
+
+        public ICollection<Entry> Contents { get; set; }
     }
 }

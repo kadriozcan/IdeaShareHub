@@ -139,7 +139,10 @@
     <Compile Include="Controllers\AdminCategoryController.cs" />
     <Compile Include="Controllers\AdminStatisticsController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\EntryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TopicController.cs" />
+    <Compile Include="Controllers\WriterController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -2643,6 +2646,13 @@
     <Content Include="Views\AdminCategory\Add.cshtml" />
     <Content Include="Views\AdminCategory\Update.cshtml" />
     <Content Include="Views\AdminStatistics\Index.cshtml" />
+    <Content Include="Views\Writer\Index.cshtml" />
+    <Content Include="Views\Writer\Add.cshtml" />
+    <Content Include="Views\Writer\Update.cshtml" />
+    <Content Include="Views\Topic\Index.cshtml" />
+    <Content Include="Views\Topic\Add.cshtml" />
+    <Content Include="Views\Entry\GetByTopic.cshtml" />
+    <Content Include="Views\Topic\Update.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

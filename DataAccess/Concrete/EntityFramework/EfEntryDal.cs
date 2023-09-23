@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfWriterDal : EfRepositoryBase<Writer>, IWriterDal
+    public class EfEntryDal : EfRepositoryBase<Entry>, IEntryDal
     {
     }
 }
