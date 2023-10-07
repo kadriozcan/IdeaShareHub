@@ -102,6 +102,10 @@
     <Compile Include="Migrations\202309201550155_topicstatusadded.designer.cs">
       <DependentUpon>202309201550155_topicstatusadded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202310021543156_add_DirectMessages_table.cs" />
+    <Compile Include="Migrations\202310021543156_add_DirectMessages_table.designer.cs">
+      <DependentUpon>202310021543156_add_DirectMessages_table.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -142,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202309201550155_topicstatusadded.resx">
       <DependentUpon>202309201550155_topicstatusadded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310021543156_add_DirectMessages_table.resx">
+      <DependentUpon>202310021543156_add_DirectMessages_table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
