@@ -2662,12 +2662,15 @@
     <Content Include="Views\Contact\GetContactDetails.cshtml" />
     <Content Include="Views\Contact\GetDetails.cshtml" />
     <Content Include="Views\Contact\ContactSideBar.cshtml" />
+    <Content Include="Views\DirectMessage\GetReceivedMessages.cshtml" />
+    <Content Include="Views\DirectMessage\GetDetails.cshtml" />
+    <Content Include="Views\DirectMessage\GetSentMessages.cshtml" />
+    <Content Include="Views\DirectMessage\Compose.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Default\" />
-    <Folder Include="Views\DirectMessage\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

@@ -28,15 +28,21 @@ namespace Business.Concrete
             _directMessageDal.Delete(directMessage);
         }
 
-        public List<DirectMessage> GetAll()
+        public List<DirectMessage> GetReceivedMessages()
         {
-           return _directMessageDal.GetAll();
+            return _directMessageDal.GetListByFilter(x => x.ReceiverMail == "admin@gmail.com");
+        }
+
+        public List<DirectMessage> GetSentMessages()
+        {
+            return _directMessageDal.GetListByFilter(x => x.SenderMail == "admin@gmail.com");
         }
 
         public DirectMessage GetById(int id)
         {
-            throw new NotImplementedException();
+            return _directMessageDal.GetByFilter(x => x.Id == id);
         }
+
 
         public void Update(DirectMessage directMessage)
         {

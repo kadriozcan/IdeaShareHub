@@ -63,6 +63,7 @@
     <Compile Include="Concrete\EntityFramework\EfAboutDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfCategoryDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfContactDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfDirectMessageDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfEntryDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfTopicDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfWriterDal.cs" />

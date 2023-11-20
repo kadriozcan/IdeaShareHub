@@ -22,15 +22,17 @@ namespace IdeaShareHub.Controllers
             return View(contacts);
         }
 
-        public PartialViewResult ContactSideBar()
-        {
-            return PartialView();
-        }
-
         public ActionResult GetDetails(int id)
         {
             Contact contact = contactManager.GetById(id);
             return View(contact);
         }
+
+        public PartialViewResult ContactSideBar()
+        {
+            return PartialView();
+        }
+
+
     }
 }

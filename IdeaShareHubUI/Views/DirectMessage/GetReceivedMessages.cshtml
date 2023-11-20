@@ -1,10 +1,11 @@
 ﻿@using Entity.Concrete
-@model List<Contact>
+@model List<DirectMessage>
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+
 
 <!DOCTYPE html>
 <html>
@@ -16,12 +17,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Inbox</h1>
+                    <h1>Received Messages</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Direct Messages</li>
+                        <li class="breadcrumb-item active">Received Messages</li>
                     </ol>
                 </div>
             </div>
@@ -36,7 +37,7 @@
                 <div class="col-md-9">
                     <div class="card card-primary card-outline">
                         <div class="card-header">
-                            <h3 class="card-title">Inbox</h3>
+                            <h3 class="card-title">Received Messages</h3>
                             <div class="card-tools">
                                 <div class="input-group input-group-sm">
                                     <input type="text" class="form-control" placeholder="Search Mail">
@@ -76,7 +77,7 @@
                             <div class="table-responsive mailbox-messages">
                                 <table class="table table-hover table-striped">
                                     <tbody>
-                                        @foreach (Contact contact in Model)
+                                        @foreach (DirectMessage dm in Model)
                                         {
                                             <tr>
                                                 <td>
@@ -85,9 +86,9 @@
                                                         <label for="check1"></label>
                                                     </div>
                                                 </td>
-                                                <td class="mailbox-name"><a href="read-mail.html">@contact.UserMail</a></td>
+                                                <td class="mailbox-name"><a href="read-mail.html">@dm.SenderMail</a></td>
                                                 <td class="mailbox-subject">
-                                                    <a href="/Contact/GetDetails/@contact.Id" style="color:black;"><b>@contact.Subject</b> - @contact.Message.Substring(0, 50)...</a>
+                                                    <a href="/DirectMessage/GetDetails/@dm.Id" style="color:black;"><b>@dm.Subject</b> - @dm.Content.Substring(0, 20)...</a>
                                                 </td>
                                                 <td class="mailbox-attachment"></td>
                                                 <td class="mailbox-date">5 mins ago</td>
