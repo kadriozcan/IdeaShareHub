@@ -63,12 +63,14 @@
     <Compile Include="Abstract\IAboutService.cs" />
     <Compile Include="Abstract\ICategoryService.cs" />
     <Compile Include="Abstract\IContactService.cs" />
+    <Compile Include="Abstract\IDirectMessageService.cs" />
     <Compile Include="Abstract\IEntryService.cs" />
     <Compile Include="Abstract\ITopicService.cs" />
     <Compile Include="Abstract\IWriterService.cs" />
     <Compile Include="Concrete\AboutManager.cs" />
     <Compile Include="Concrete\CategoryManager.cs" />
     <Compile Include="Concrete\ContactManager.cs" />
+    <Compile Include="Concrete\DirectMessageManager.cs" />
     <Compile Include="Concrete\EntryManager.cs" />
     <Compile Include="Concrete\TopicManager.cs" />
     <Compile Include="Concrete\WriterManager.cs" />

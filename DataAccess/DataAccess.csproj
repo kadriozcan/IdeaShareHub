@@ -54,6 +54,7 @@
     <Compile Include="Abstract\IAboutDal.cs" />
     <Compile Include="Abstract\ICategoryDal.cs" />
     <Compile Include="Abstract\IContactDal.cs" />
+    <Compile Include="Abstract\IDirectMessageDal.cs" />
     <Compile Include="Abstract\IEntryDal.cs" />
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Abstract\ITopicDal.cs" />
