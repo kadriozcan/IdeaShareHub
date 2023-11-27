@@ -15,29 +15,24 @@
                 <li class="nav-item active">
                     <a href="/Contact/Index/" class="nav-link">
                         <i class="fas fa-mail-bulk"></i> Inbox
-                        <span class="badge bg-primary float-right">0</span>
+                        <span class="badge bg-primary float-right">@ViewBag.NumOfContacts</span>
                     </a>
                 </li>
                 <li class="nav-item active">
                     <a href="/DirectMessage/GetReceivedMessages/" class="nav-link">
                         <i class="fas fa-inbox"></i> Direct Messages
-                        <span class="badge bg-primary float-right">12</span>
+                        <span class="badge bg-primary float-right">@ViewBag.NumOfReceivedMessages</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="/DirectMessage/GetSentMessages/" class="nav-link">
                         <i class="far fa-envelope"></i> Sent
+                        <span class="badge bg-primary float-right">@ViewBag.NumOfSentMessages</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="far fa-file-alt"></i> Drafts
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="fas fa-filter"></i> Junk
-                        <span class="badge bg-warning float-right">65</span>
                     </a>
                 </li>
                 <li class="nav-item">

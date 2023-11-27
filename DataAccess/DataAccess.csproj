@@ -108,6 +108,14 @@
     <Compile Include="Migrations\202310021543156_add_DirectMessages_table.designer.cs">
       <DependentUpon>202310021543156_add_DirectMessages_table.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311271248428_cascade_ondelete.cs" />
+    <Compile Include="Migrations\202311271248428_cascade_ondelete.designer.cs">
+      <DependentUpon>202311271248428_cascade_ondelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202311271316160_contact_date_field.cs" />
+    <Compile Include="Migrations\202311271316160_contact_date_field.designer.cs">
+      <DependentUpon>202311271316160_contact_date_field.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -151,6 +159,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202310021543156_add_DirectMessages_table.resx">
       <DependentUpon>202310021543156_add_DirectMessages_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311271248428_cascade_ondelete.resx">
+      <DependentUpon>202311271248428_cascade_ondelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311271316160_contact_date_field.resx">
+      <DependentUpon>202311271316160_contact_date_field.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

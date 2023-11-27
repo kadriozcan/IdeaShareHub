@@ -10,7 +10,6 @@ namespace DataAccess.Concrete
     {
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            
         }
 
 

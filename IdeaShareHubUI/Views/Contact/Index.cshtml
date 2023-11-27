@@ -90,7 +90,7 @@
                                                     <a href="/Contact/GetDetails/@contact.Id" style="color:black;"><b>@contact.Subject</b> - @contact.Message.Substring(0, 50)...</a>
                                                 </td>
                                                 <td class="mailbox-attachment"></td>
-                                                <td class="mailbox-date">5 mins ago</td>
+                                                <td class="mailbox-date">@(((DateTime)contact.Date).ToString("MM-dd-yyyy"))</td>
                                             </tr>
                                         }
 

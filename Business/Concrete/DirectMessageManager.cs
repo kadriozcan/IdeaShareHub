@@ -48,5 +48,15 @@ namespace Business.Concrete
         {
             throw new NotImplementedException();
         }
+
+        public int GetNumOfReceivedMessages()
+        {
+            return _directMessageDal.GetListByFilter(x => x.ReceiverMail == "admin@gmail.com").Count();
+        }
+
+        public int GetNumOfSentMessages()
+        {
+            return _directMessageDal.GetListByFilter(x => x.SenderMail == "admin@gmail.com").Count();
+        }
     }
 }

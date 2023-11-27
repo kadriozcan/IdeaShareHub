@@ -91,7 +91,7 @@
                                                     <a href="/DirectMessage/GetDetails/@dm.Id" style="color:black;"><b>@dm.Subject</b> - @dm.Content.Substring(0, 20)...</a>
                                                 </td>
                                                 <td class="mailbox-attachment"></td>
-                                                <td class="mailbox-date">5 mins ago</td>
+                                                <td class="mailbox-date">@(((DateTime)dm.Date).ToString("MM-dd-yyyy"))</td>
                                             </tr>
                                         }
 

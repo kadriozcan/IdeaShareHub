@@ -4,8 +4,6 @@
     ViewBag.Title = "GetDirectMessageDetail";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-
-<h2>GetDirectMessageDetail</h2>
 <!DOCTYPE html>
 <html lang="en">
 <body class="hold-transition sidebar-mini">
@@ -16,7 +14,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Compose</h1>
+                    <h1>Received Messages</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -51,7 +49,7 @@
                                 <h5>@Model.Subject</h5>
                                 <h6>
                                     From: @Model.SenderMail
-                                    <span class="mailbox-read-time float-right">15 Feb. 2015 11:03 PM</span>
+                                    <span class="mailbox-read-time float-right">@(((DateTime)Model.Date).ToString("MM-dd-yyyy"))</span>
                                 </h6>
                             </div>
                             <!-- /.mailbox-read-info -->

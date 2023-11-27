@@ -13,6 +13,7 @@ namespace IdeaShareHub.Controllers
     public class ContactController : Controller
     {
         ContactManager contactManager = new ContactManager(new EfContactDal());
+        DirectMessageManager directMessageManager = new DirectMessageManager(new EfDirectMessageDal());
 
         ContactValidator validator = new ContactValidator();
 
@@ -30,6 +31,10 @@ namespace IdeaShareHub.Controllers
 
         public PartialViewResult ContactSideBar()
         {
+            int numOfContacts = contactManager.GetNumOfContacts();
+            ViewBag.NumOfContacts = numOfContacts;
+            ViewBag.NumOfSentMessages = directMessageManager.GetNumOfSentMessages();
+            ViewBag.NumOfReceivedMessages = directMessageManager.GetNumOfReceivedMessages();
             return PartialView();
         }
 

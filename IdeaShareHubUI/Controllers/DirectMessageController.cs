@@ -15,6 +15,7 @@ namespace IdeaShareHub.Controllers
 
         public ActionResult GetReceivedMessages()
         {
+
             List<DirectMessage> receivedMessages = directMessageManager.GetReceivedMessages();
             return View(receivedMessages);
         }
@@ -26,6 +27,7 @@ namespace IdeaShareHub.Controllers
 
         public ActionResult GetSentMessages()
         {
+
             List<DirectMessage> sentMessages = directMessageManager.GetSentMessages();
             return View(sentMessages);
         }

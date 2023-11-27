@@ -20,5 +20,8 @@ namespace Business.Abstract
         void Delete(DirectMessage directMessage);
 
         void Update(DirectMessage directMessage);
+
+        int GetNumOfReceivedMessages();
+        int GetNumOfSentMessages();
     }
 }

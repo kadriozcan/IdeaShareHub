@@ -38,6 +38,11 @@ namespace Business.Concrete
             return _contactDal.GetByFilter(c => c.Id == id);
         }
 
+        public int GetNumOfContacts()
+        {
+            return _contactDal.GetAll().Count();
+        }
+
         public void Update(Contact contact)
         {
             _contactDal.Update(contact);

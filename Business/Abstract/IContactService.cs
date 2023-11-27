@@ -18,5 +18,7 @@ namespace Business.Abstract
         void Delete(Contact contact);
 
         void Update(Contact contact);
+
+        int GetNumOfContacts();
     }
 }
