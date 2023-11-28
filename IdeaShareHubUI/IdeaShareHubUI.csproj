@@ -143,6 +143,7 @@
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DirectMessageController.cs" />
     <Compile Include="Controllers\EntryController.cs" />
+    <Compile Include="Controllers\ErrorPageController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TopicController.cs" />
     <Compile Include="Controllers\WriterController.cs" />
@@ -178,6 +179,11 @@
     <Content Include="AdminLTE-3.2.0\build\npm\Plugins.js" />
     <Content Include="AdminLTE-3.2.0\build\npm\Publish.js" />
     <Content Include="AdminLTE-3.2.0\build\npm\vnu-jar.js" />
+    <Content Include="AdminLTE-3.2.0\colorlib-error-404-15\css\font-awesome.min.css" />
+    <Content Include="AdminLTE-3.2.0\colorlib-error-404-15\css\style.css" />
+    <Content Include="AdminLTE-3.2.0\colorlib-error-404-15\fonts\fontawesome-webfont.svg" />
+    <Content Include="AdminLTE-3.2.0\colorlib-error-404-15\index.html" />
+    <Content Include="AdminLTE-3.2.0\colorlib-error-404-15\readme.txt" />
     <Content Include="AdminLTE-3.2.0\dist\css\adminlte.css" />
     <Content Include="AdminLTE-3.2.0\dist\css\adminlte.min.css" />
     <Content Include="AdminLTE-3.2.0\dist\css\alt\adminlte.components.css" />
@@ -2613,6 +2619,11 @@
     <Content Include="AdminLTE-3.2.0\plugins\summernote\summernote.min.js.map" />
     <Content Include="AdminLTE-3.2.0\plugins\toastr\toastr.js.map" />
     <Content Include="AdminLTE-3.2.0\README.md" />
+    <Content Include="AdminLTE-3.2.0\colorlib-error-404-15\fonts\fontawesome-webfont.eot" />
+    <Content Include="AdminLTE-3.2.0\colorlib-error-404-15\fonts\fontawesome-webfont.ttf" />
+    <Content Include="AdminLTE-3.2.0\colorlib-error-404-15\fonts\fontawesome-webfont.woff" />
+    <Content Include="AdminLTE-3.2.0\colorlib-error-404-15\fonts\fontawesome-webfont.woff2" />
+    <Content Include="AdminLTE-3.2.0\colorlib-error-404-15\fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2666,6 +2677,7 @@
     <Content Include="Views\DirectMessage\GetDetails.cshtml" />
     <Content Include="Views\DirectMessage\GetSentMessages.cshtml" />
     <Content Include="Views\DirectMessage\Compose.cshtml" />
+    <Content Include="Views\ErrorPage\Page404.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
