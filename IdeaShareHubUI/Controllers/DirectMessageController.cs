@@ -14,7 +14,7 @@ namespace IdeaShareHub.Controllers
 {
     public class DirectMessageController : Controller
     {
-        DirectMessageManager _directMessageManager = new DirectMessageManager(new EfDirectMessageDal());
+        private readonly DirectMessageManager _directMessageManager = new DirectMessageManager(new EfDirectMessageDal());
 
         private readonly DirectMessageValidator validator = new DirectMessageValidator();
 

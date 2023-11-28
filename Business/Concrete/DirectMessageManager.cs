@@ -11,7 +11,7 @@ namespace Business.Concrete
 {
     public class DirectMessageManager : IDirectMessageService
     {
-        IDirectMessageDal _directMessageDal;
+        private readonly IDirectMessageDal _directMessageDal;
 
         public DirectMessageManager(IDirectMessageDal directMessageDal)
         {

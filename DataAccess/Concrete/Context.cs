@@ -20,7 +20,7 @@ namespace DataAccess.Concrete
         public DbSet<Topic> Topics { get; set; }
         public DbSet<Writer> Writers { get; set; }
         public DbSet<DirectMessage> DirectMessages { get; set; }
-
+        public DbSet<ImageFile> ImageFiles { get; set; }
 
     }
 }

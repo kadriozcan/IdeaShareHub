@@ -144,6 +144,7 @@
     <Compile Include="Controllers\DirectMessageController.cs" />
     <Compile Include="Controllers\EntryController.cs" />
     <Compile Include="Controllers\ErrorPageController.cs" />
+    <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TopicController.cs" />
     <Compile Include="Controllers\WriterController.cs" />
@@ -323,6 +324,13 @@
     <Content Include="AdminLTE-3.2.0\docs\_layouts\page.html" />
     <Content Include="AdminLTE-3.2.0\iframe-dark.html" />
     <Content Include="AdminLTE-3.2.0\iframe.html" />
+    <Content Include="AdminLTE-3.2.0\images\audi.jpg" />
+    <Content Include="AdminLTE-3.2.0\images\bmw.jpg" />
+    <Content Include="AdminLTE-3.2.0\images\gtr.jpg" />
+    <Content Include="AdminLTE-3.2.0\images\lambo.jpg" />
+    <Content Include="AdminLTE-3.2.0\images\mustang.jpg" />
+    <Content Include="AdminLTE-3.2.0\images\porse.jpg" />
+    <Content Include="AdminLTE-3.2.0\images\r8.jpg" />
     <Content Include="AdminLTE-3.2.0\index.html" />
     <Content Include="AdminLTE-3.2.0\index2.html" />
     <Content Include="AdminLTE-3.2.0\index3.html" />
@@ -2678,6 +2686,7 @@
     <Content Include="Views\DirectMessage\GetSentMessages.cshtml" />
     <Content Include="Views\DirectMessage\Compose.cshtml" />
     <Content Include="Views\ErrorPage\Page404.cshtml" />
+    <Content Include="Views\Gallery\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
