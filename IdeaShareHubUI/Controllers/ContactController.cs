@@ -12,10 +12,10 @@ namespace IdeaShareHub.Controllers
 {
     public class ContactController : Controller
     {
-        ContactManager contactManager = new ContactManager(new EfContactDal());
-        DirectMessageManager directMessageManager = new DirectMessageManager(new EfDirectMessageDal());
+        private readonly ContactManager contactManager = new ContactManager(new EfContactDal());
+        private readonly DirectMessageManager directMessageManager = new DirectMessageManager(new EfDirectMessageDal());
 
-        ContactValidator validator = new ContactValidator();
+        private readonly ContactValidator validator = new ContactValidator();
 
         public ActionResult Index()
         {
