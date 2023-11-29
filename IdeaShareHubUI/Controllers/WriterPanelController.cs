@@ -9,23 +9,25 @@ using System.Web.Mvc;
 
 namespace IdeaShareHub.Controllers
 {
-    public class TopicController : Controller
+    public class WriterPanelController : Controller
     {
         private readonly TopicManager topicManager = new TopicManager(new EfTopicDal());
-
         private readonly CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
 
-        private readonly WriterManager writerManager = new WriterManager(new EfWriterDal());
-
-
-        public ActionResult Index()
+        public ActionResult WriterProfile()
         {
-            List<Topic> topics = topicManager.GetAll();
-            return View(topics);
+            return View();
+        }
+
+        public ActionResult WriterTopics()
+        {
+            
+            List<Topic> writerTopics = topicManager.GetAllByWriter();
+            return View(writerTopics);
         }
 
         [HttpGet]
-        public ActionResult Add()
+        public ActionResult AddTopic()
         {
             List<SelectListItem> categoryValues = (from c in categoryManager.GetAll()
                                                    select new SelectListItem
@@ -34,29 +36,22 @@ namespace IdeaShareHub.Controllers
                                                        Value = c.Id.ToString()
                                                    }).ToList();
             ViewBag.CategoryValues = categoryValues;
-
-
-            List<SelectListItem> writerValues = (from w in writerManager.GetAll()
-                                                 select new SelectListItem
-                                                 {
-                                                     Text = w.Username,
-                                                     Value = w.Id.ToString()
-                                                 }).ToList();
-            ViewBag.WriterValues = writerValues;
-
             return View();
         }
 
         [HttpPost]
-        public ActionResult Add(Topic topic)
+        public ActionResult AddTopic(Topic topic)
         {
+            
             topic.CreatedAt = DateTime.Parse(DateTime.Now.ToShortDateString());
+            topic.WriterId = 4;
+            topic.Status = true;
             topicManager.Add(topic);
-            return RedirectToAction("Index");
+            return RedirectToAction("WriterTopics");
         }
 
         [HttpGet]
-        public ActionResult Update(int id)
+        public ActionResult UpdateTopic(int id)
         {
             List<SelectListItem> categoryValues = (from c in categoryManager.GetAll()
                                                    select new SelectListItem
@@ -68,21 +63,20 @@ namespace IdeaShareHub.Controllers
             Topic topic = topicManager.GetById(id);
             return View(topic);
         }
-
         [HttpPost]
-        public ActionResult Update(Topic topic)
+        public ActionResult UpdateTopic(Topic topic)
         {
             topic.CreatedAt = DateTime.Now;
             topicManager.Update(topic);
-            return RedirectToAction("Index");
+            return RedirectToAction("WriterTopics");
         }
+
 
         public ActionResult DeleteTopic(int id)
         {
             Topic topic = topicManager.GetById(id);
             topicManager.Delete(topic);
-            return RedirectToAction("Index");
+            return RedirectToAction("WriterTopics");
         }
-
     }
 }
