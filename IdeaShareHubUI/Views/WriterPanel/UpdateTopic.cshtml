@@ -1,0 +1,25 @@
+﻿@model Entity.Concrete.Topic
+
+@{
+    ViewBag.Title = "UpdateTopic";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+<h2>Update</h2>
+<br />
+@using (Html.BeginForm("Update", "WriterPanel", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Id")
+        @Html.TextBoxFor(x => x.Id, new { @class = "form-control disabled", @style = "width:20rem", @readonly = true })
+        <br />
+        @Html.Label("Name")
+        @Html.TextBoxFor(t => t.Name, new { @class = "form-control" })
+        <br />
+        @Html.Label("Category")
+        @Html.DropDownListFor(t => t.CategoryId, (List<SelectListItem>)ViewBag.CategoryValues, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-info">Save</button>
+    </div>
+}
+

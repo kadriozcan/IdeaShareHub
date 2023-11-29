@@ -1,0 +1,24 @@
+﻿@using Entity.Concrete
+@model Topic
+@{
+    ViewBag.Title = "AddTopic";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+<h2>Add New Topic</h2>
+<br />
+@using (Html.BeginForm("AddTopic", "WriterPanel", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Name")
+        @Html.TextBoxFor(t => t.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(t => t.Name)
+        <br />
+        @Html.Label("Category")
+        @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.CategoryValues, new { @class = "form-control" })
+        @Html.ValidationMessageFor(t => t.CategoryId)
+        <br />
+        <button class="btn btn-info">Save</button>
+    </div>
+}
+
