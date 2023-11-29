@@ -17,6 +17,7 @@ namespace IdeaShareHub.Controllers
 
         private readonly ContactValidator validator = new ContactValidator();
 
+        [Authorize]
         public ActionResult Index()
         {
             List<Contact> contacts = contactManager.GetAll();

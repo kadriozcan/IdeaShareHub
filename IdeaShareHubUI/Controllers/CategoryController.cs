@@ -17,9 +17,6 @@ namespace IdeaShareHub.Controllers
 
         private readonly CategoryManager _categoryManager = new CategoryManager(new EfCategoryDal());
 
-
-
-        // GET: Category
         public ActionResult Index()
         {
             return View();
