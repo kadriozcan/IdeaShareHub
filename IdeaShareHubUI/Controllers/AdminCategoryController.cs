@@ -15,7 +15,7 @@ namespace IdeaShareHub.Controllers
     {
         CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
 
-        [Authorize]
+        [Authorize(Roles ="A")]
         public ActionResult Index()
         {
             List<Category> categories = categoryManager.GetAll();
