@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IAboutDal.cs" />
+    <Compile Include="Abstract\IAdminDal.cs" />
     <Compile Include="Abstract\ICategoryDal.cs" />
     <Compile Include="Abstract\IContactDal.cs" />
     <Compile Include="Abstract\IDirectMessageDal.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="Abstract\IWriterDal.cs" />
     <Compile Include="Concrete\Context.cs" />
     <Compile Include="Concrete\EntityFramework\EfAboutDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfAdminDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfCategoryDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfContactDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfDirectMessageDal.cs" />
@@ -122,6 +124,10 @@
     <Compile Include="Migrations\202311281158268_add_imagefile.designer.cs">
       <DependentUpon>202311281158268_add_imagefile.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311291017516_add_admin.cs" />
+    <Compile Include="Migrations\202311291017516_add_admin.designer.cs">
+      <DependentUpon>202311291017516_add_admin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -174,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311281158268_add_imagefile.resx">
       <DependentUpon>202311281158268_add_imagefile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311291017516_add_admin.resx">
+      <DependentUpon>202311291017516_add_admin.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
