@@ -1,4 +1,5 @@
 ﻿using Business.Concrete;
+using DataAccess.Concrete;
 using DataAccess.Concrete.EntityFramework;
 using Entity.Concrete;
 using System;
@@ -11,7 +12,7 @@ namespace IdeaShareHub.Controllers
 {
     public class WriterPanelEntryController : Controller
     {
-        private readonly EntryManager entryManager = new EntryManager(new EfEntryDal());
+        private readonly EntryManager _entryManager = new EntryManager(new EfEntryDal());
 
         public ActionResult Index()
         {
@@ -20,7 +21,10 @@ namespace IdeaShareHub.Controllers
 
         public ActionResult GetEntries()
         {
-            List<Entry> entries = entryManager.GetAllByWriter();
+            Context c = new Context();
+            string username = (string)Session["Username"];
+            int id = c.Writers.Where(x => x.Username==username).Select(y => y.Id).FirstOrDefault();
+            List<Entry> entries = _entryManager.GetAllByWriter(id);
             return View(entries);
         }
     }

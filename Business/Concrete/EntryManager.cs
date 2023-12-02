@@ -33,9 +33,10 @@ namespace Business.Concrete
             return _entryDal.GetAll();
         }
 
-        public List<Entry> GetAllByWriter()
+        public List<Entry> GetAllByWriter(int id)
         {
-            return _entryDal.GetListByFilter(x => x.WriterId == 4);
+
+            return _entryDal.GetListByFilter(x => x.WriterId == id);
         }
 
         public Entry GetById(int id)
