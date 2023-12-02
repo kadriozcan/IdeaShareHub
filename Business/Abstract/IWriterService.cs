@@ -18,5 +18,8 @@ namespace Business.Abstract
         void Delete(Writer category);
 
         void Update(Writer category);
+
+        Writer GetWriterInfo(Writer writer);
+
     }
 }

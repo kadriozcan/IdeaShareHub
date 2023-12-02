@@ -30,12 +30,12 @@ namespace Business.Concrete
 
         public List<DirectMessage> GetReceivedMessages()
         {
-            return _directMessageDal.GetListByFilter(x => x.ReceiverMail == "admin@gmail.com");
+            return _directMessageDal.GetListByFilter(x => x.ReceiverMail == "gizemyil@gmail.com");
         }
 
         public List<DirectMessage> GetSentMessages()
         {
-            return _directMessageDal.GetListByFilter(x => x.SenderMail == "admin@gmail.com");
+            return _directMessageDal.GetListByFilter(x => x.SenderMail == "gizemyil@gmail.com");
         }
 
         public DirectMessage GetById(int id)

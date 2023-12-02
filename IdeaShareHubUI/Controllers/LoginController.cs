@@ -13,6 +13,7 @@ namespace IdeaShareHub.Controllers
     public class LoginController : Controller
     {
         private readonly AdminManager _adminManager = new AdminManager(new EfAdminDal());
+        private readonly WriterManager _writerManager = new WriterManager(new EfWriterDal());
 
 
         [HttpGet]
@@ -33,6 +34,28 @@ namespace IdeaShareHub.Controllers
             else
             {
                 return RedirectToAction("Index");
+            }
+        }
+
+        [HttpGet]
+        public ActionResult UserLogin()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult WriterLogin(Writer writer)
+        {
+            Writer writerUserInfo = _writerManager.GetWriterInfo(writer);
+            if (writerUserInfo != null)
+            {
+                FormsAuthentication.SetAuthCookie(writerUserInfo.Username, false);
+                Session["Username"] = writerUserInfo.Username;
+                return RedirectToAction("GetEntries", "WriterPanelEntry");
+            }
+            else
+            {
+                return RedirectToAction("WriterLogin");
             }
         }
     }
