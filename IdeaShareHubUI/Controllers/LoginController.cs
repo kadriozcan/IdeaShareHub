@@ -38,7 +38,7 @@ namespace IdeaShareHub.Controllers
         }
 
         [HttpGet]
-        public ActionResult UserLogin()
+        public ActionResult WriterLogin()
         {
             return View();
         }
