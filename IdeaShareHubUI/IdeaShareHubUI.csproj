@@ -150,6 +150,8 @@
     <Compile Include="Controllers\TopicController.cs" />
     <Compile Include="Controllers\WriterController.cs" />
     <Compile Include="Controllers\WriterPanelController.cs" />
+    <Compile Include="Controllers\WriterPanelEntryController.cs" />
+    <Compile Include="Controllers\WriterPanelMessageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -2808,6 +2810,14 @@
     <Content Include="Views\WriterPanel\WriterTopics.cshtml" />
     <Content Include="Views\WriterPanel\AddTopic.cshtml" />
     <Content Include="Views\WriterPanel\UpdateTopic.cshtml" />
+    <Content Include="Views\WriterPanelMessage\GetReceivedMessages.cshtml" />
+    <Content Include="Views\WriterPanelMessage\ContactSideBar.cshtml" />
+    <Content Include="Views\WriterPanelMessage\GetSentMessages.cshtml" />
+    <Content Include="Views\WriterPanelMessage\GetDetails.cshtml" />
+    <Content Include="Views\WriterPanelMessage\Compose.cshtml" />
+    <Content Include="Views\WriterPanelEntry\Index.cshtml" />
+    <Content Include="Views\WriterPanelEntry\GetEntries.cshtml" />
+    <Content Include="Views\Login\UserLogin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

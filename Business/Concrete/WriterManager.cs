@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using DataAccess.Abstract;
+using DataAccess.Concrete.EntityFramework;
 using Entity.Concrete;
 using System;
 using System.Collections.Generic;
@@ -41,6 +42,11 @@ namespace Business.Concrete
         public void Update(Writer category)
         {
             _writerDal.Update(category);
+        }
+
+        public Writer GetWriterInfo(Writer writer)
+        {
+            return _writerDal.GetByFilter(x => x.Username == writer.Username && x.Password == writer.Password);
         }
     }
 }

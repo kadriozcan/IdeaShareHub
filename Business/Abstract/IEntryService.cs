@@ -15,6 +15,8 @@ namespace Business.Abstract
 
         List<Entry> GetListByTopic(int id);
 
+        List<Entry> GetAllByWriter();
+
         void Add(Entry entry);
 
         void Delete(Entry entry);
