@@ -48,5 +48,10 @@ namespace Business.Concrete
         {
             return _writerDal.GetByFilter(x => x.Username == writer.Username && x.Password == writer.Password);
         }
+
+        public Writer GetByUsername(string username)
+        {
+            return _writerDal.GetByFilter(x => x.Username == username);
+        }
     }
 }

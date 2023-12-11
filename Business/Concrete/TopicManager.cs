@@ -34,9 +34,9 @@ namespace Business.Concrete
             return _topicDal.GetAll();
         }
 
-        public List<Topic> GetAllByWriter()
+        public List<Topic> GetAllByWriter(int id)
         {
-            return _topicDal.GetListByFilter(x => x.WriterId == 4);
+            return _topicDal.GetListByFilter(x => x.WriterId == id && x.Status==true);
         }
 
         public Topic GetById(int id)

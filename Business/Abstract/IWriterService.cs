@@ -13,6 +13,8 @@ namespace Business.Abstract
 
         Writer GetById(int id);
 
+        Writer GetByUsername(string username);
+
         void Add(Writer category);
 
         void Delete(Writer category);

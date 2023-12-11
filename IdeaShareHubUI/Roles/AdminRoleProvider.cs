@@ -12,6 +12,13 @@ namespace IdeaShareHub.Roles
     {
         public override string ApplicationName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
+        public override string[] GetRolesForUser(string username)
+        {
+            Context c = new Context();
+            Admin admin = c.Admins.FirstOrDefault(x => x.Username == username);
+            return new string[] { admin.Role };
+        }
+
         public override void AddUsersToRoles(string[] usernames, string[] roleNames)
         {
             throw new NotImplementedException();
@@ -37,12 +44,6 @@ namespace IdeaShareHub.Roles
             throw new NotImplementedException();
         }
 
-        public override string[] GetRolesForUser(string username)
-        {
-            Context c = new Context();
-            Admin admin = c.Admins.FirstOrDefault(x => x.Username == username);
-            return new string[] { admin.Role };
-        }
 
         public override string[] GetUsersInRole(string roleName)
         {
