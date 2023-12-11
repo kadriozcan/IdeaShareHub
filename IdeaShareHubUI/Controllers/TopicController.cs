@@ -77,7 +77,7 @@ namespace IdeaShareHub.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult DeleteTopic(int id)
+        public ActionResult Delete(int id)
         {
             Topic topic = topicManager.GetById(id);
             topicManager.Delete(topic);

@@ -1,4 +1,5 @@
 ﻿using Business.Concrete;
+using DataAccess.Concrete;
 using DataAccess.Concrete.EntityFramework;
 using Entity.Concrete;
 using System;
@@ -21,9 +22,11 @@ namespace IdeaShareHub.Controllers
 
         public ActionResult WriterTopics()
         {
-            
-            List<Topic> writerTopics = topicManager.GetAllByWriter();
-            return View(writerTopics);
+            Context c = new Context();
+            string username = (string)Session["Username"];
+            int writerId = c.Writers.Where(x => x.Username == username).Select(y => y.Id).FirstOrDefault();
+            List<Topic> topics = topicManager.GetAllByWriter(writerId);
+            return View(topics);
         }
 
         [HttpGet]
@@ -42,9 +45,12 @@ namespace IdeaShareHub.Controllers
         [HttpPost]
         public ActionResult AddTopic(Topic topic)
         {
-            
+
             topic.CreatedAt = DateTime.Parse(DateTime.Now.ToShortDateString());
-            topic.WriterId = 4;
+            Context c = new Context();
+            string username = (string)Session["Username"];
+            int writerId = c.Writers.Where(x => x.Username == username).Select(y => y.Id).FirstOrDefault();
+            topic.WriterId = writerId;
             topic.Status = true;
             topicManager.Add(topic);
             return RedirectToAction("WriterTopics");
@@ -66,7 +72,12 @@ namespace IdeaShareHub.Controllers
         [HttpPost]
         public ActionResult UpdateTopic(Topic topic)
         {
+            Context c = new Context();
             topic.CreatedAt = DateTime.Now;
+            string username = (string)Session["Username"];
+            int writerId = c.Writers.Where(x => x.Username == username).Select(y => y.Id).FirstOrDefault();
+            topic.WriterId = writerId;
+            topic.Status = true;
             topicManager.Update(topic);
             return RedirectToAction("WriterTopics");
         }

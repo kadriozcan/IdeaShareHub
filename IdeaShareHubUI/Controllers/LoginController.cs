@@ -10,6 +10,7 @@ using System.Web.Security;
 
 namespace IdeaShareHub.Controllers
 {
+    [AllowAnonymous]
     public class LoginController : Controller
     {
         private readonly AdminManager _adminManager = new AdminManager(new EfAdminDal());
