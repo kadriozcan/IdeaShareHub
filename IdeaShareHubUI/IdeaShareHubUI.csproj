@@ -141,6 +141,7 @@
     <Compile Include="Controllers\AdminStatisticsController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\DirectMessageController.cs" />
     <Compile Include="Controllers\EntryController.cs" />
     <Compile Include="Controllers\ErrorPageController.cs" />
@@ -2818,11 +2819,12 @@
     <Content Include="Views\WriterPanelEntry\Index.cshtml" />
     <Content Include="Views\WriterPanelEntry\GetEntries.cshtml" />
     <Content Include="Views\Login\WriterLogin.cshtml" />
+    <Content Include="Views\Default\Topics.cshtml" />
+    <Content Include="Views\Default\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
