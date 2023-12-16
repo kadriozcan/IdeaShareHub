@@ -89,5 +89,13 @@ namespace IdeaShareHub.Controllers
             topicManager.Delete(topic);
             return RedirectToAction("WriterTopics");
         }
+
+        public ActionResult AllTopics()
+        {
+            List<Topic> allTopics = topicManager.GetAll();
+            return View(allTopics);
+        }
+
+       
     }
 }
