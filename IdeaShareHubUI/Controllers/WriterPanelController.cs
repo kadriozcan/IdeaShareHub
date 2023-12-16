@@ -2,6 +2,7 @@
 using DataAccess.Concrete;
 using DataAccess.Concrete.EntityFramework;
 using Entity.Concrete;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -90,9 +91,9 @@ namespace IdeaShareHub.Controllers
             return RedirectToAction("WriterTopics");
         }
 
-        public ActionResult AllTopics()
+        public ActionResult AllTopics(int p = 1)
         {
-            List<Topic> allTopics = topicManager.GetAll();
+            IEnumerable<Topic> allTopics = topicManager.GetAll().ToPagedList(p, 3);
             return View(allTopics);
         }
 
