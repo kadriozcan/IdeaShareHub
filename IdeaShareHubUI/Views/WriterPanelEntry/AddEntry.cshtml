@@ -1,0 +1,22 @@
+﻿@using Entity.Concrete
+@model Entry
+@{
+    ViewBag.Title = "AddEntry";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+<h2>New Entry</h2>
+<br />
+@using (Html.BeginForm("AddEntry", "WriterPanelEntry", FormMethod.Post))
+{
+    <div class="form-group">
+        <input type="hidden" name="TopicId" value="@ViewBag.TopicId"/>
+
+        @Html.Label("Share Your Thoughts Here:")
+        @Html.TextAreaFor(x => x.BodyText, 6, 30, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.BodyText)
+        <br />
+        <button class="btn btn-info">Send</button>
+    </div>
+}
+
