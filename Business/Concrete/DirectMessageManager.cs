@@ -28,14 +28,14 @@ namespace Business.Concrete
             _directMessageDal.Delete(directMessage);
         }
 
-        public List<DirectMessage> GetReceivedMessages()
+        public List<DirectMessage> GetReceivedMessages(string userMail)
         {
-            return _directMessageDal.GetListByFilter(x => x.ReceiverMail == "gizemyil@gmail.com");
+            return _directMessageDal.GetListByFilter(x => x.ReceiverMail == userMail);
         }
 
-        public List<DirectMessage> GetSentMessages()
+        public List<DirectMessage> GetSentMessages(string userMail)
         {
-            return _directMessageDal.GetListByFilter(x => x.SenderMail == "gizemyil@gmail.com");
+            return _directMessageDal.GetListByFilter(x => x.SenderMail == userMail);
         }
 
         public DirectMessage GetById(int id)

@@ -1,5 +1,6 @@
 ﻿using Business.Concrete;
 using Business.ValidationRules.FluentValidation;
+using DataAccess.Concrete;
 using DataAccess.Concrete.EntityFramework;
 using Entity.Concrete;
 using FluentValidation.Results;
@@ -20,8 +21,10 @@ namespace IdeaShareHub.Controllers
 
         public ActionResult GetReceivedMessages()
         {
-
-            List<DirectMessage> receivedMessages = _directMessageManager.GetReceivedMessages();
+            Context c = new Context();
+            string username = (string)Session["Username"];
+            string userMail = c.Writers.Where(x => x.Username == username).Select(y => y.Email).FirstOrDefault();
+            List<DirectMessage> receivedMessages = _directMessageManager.GetReceivedMessages(userMail);
             return View(receivedMessages);
         }
 
@@ -34,8 +37,11 @@ namespace IdeaShareHub.Controllers
 
         public ActionResult GetSentMessages()
         {
+            Context c = new Context();
+            string username = (string)Session["Username"];
+            string userMail = c.Writers.Where(x => x.Username == username).Select(y => y.Email).FirstOrDefault();
 
-            List<DirectMessage> sentMessages = _directMessageManager.GetSentMessages();
+            List<DirectMessage> sentMessages = _directMessageManager.GetSentMessages(userMail);
             return View(sentMessages);
         }
 
@@ -55,9 +61,12 @@ namespace IdeaShareHub.Controllers
         public ActionResult Compose(DirectMessage dm)
         {
             ValidationResult result = _validator.Validate(dm);
+            Context c = new Context();
+            string username = (string)Session["Username"];
+            string userMail = c.Writers.Where(x => x.Username == username).Select(y => y.Email).FirstOrDefault();
             if (result.IsValid)
             {
-                dm.SenderMail = "gizem@gmail.com";
+                dm.SenderMail = userMail;
                 dm.Date = DateTime.Now;
                 _directMessageManager.Add(dm);
                 return RedirectToAction("GetSentMessages");
