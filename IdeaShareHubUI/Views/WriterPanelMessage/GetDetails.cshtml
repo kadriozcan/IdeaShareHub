@@ -56,7 +56,7 @@
                             <!-- /.mailbox-read-info -->
                             <!-- /.mailbox-controls -->
                             <div class="mailbox-read-message">
-                                <p>@Model.Content</p>
+                                <p>@Html.Raw(HttpUtility.HtmlDecode(Model.Content))</p>
                             </div>
                             <!-- /.mailbox-read-message -->
                         </div>

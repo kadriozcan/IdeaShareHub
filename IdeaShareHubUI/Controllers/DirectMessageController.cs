@@ -19,10 +19,10 @@ namespace IdeaShareHub.Controllers
         private readonly DirectMessageValidator _validator = new DirectMessageValidator();
 
 
-        public ActionResult GetReceivedMessages()
+        public ActionResult GetReceivedMessages(string p)
         {
 
-            List<DirectMessage> receivedMessages = _directMessageManager.GetReceivedMessages();
+            List<DirectMessage> receivedMessages = _directMessageManager.GetReceivedMessages(p);
             return View(receivedMessages);
         }
         public ActionResult GetDetails(int id)
@@ -31,10 +31,10 @@ namespace IdeaShareHub.Controllers
             return View(directMessage);
         }
 
-        public ActionResult GetSentMessages()
+        public ActionResult GetSentMessages(string p)
         {
 
-            List<DirectMessage> sentMessages = _directMessageManager.GetSentMessages();
+            List<DirectMessage> sentMessages = _directMessageManager.GetSentMessages(p);
             return View(sentMessages);
         }
 

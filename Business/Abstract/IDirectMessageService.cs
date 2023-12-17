@@ -9,9 +9,9 @@ namespace Business.Abstract
 {
     public interface IDirectMessageService
     {
-        List<DirectMessage> GetReceivedMessages();
+        List<DirectMessage> GetReceivedMessages(string userMail);
 
-        List<DirectMessage> GetSentMessages();
+        List<DirectMessage> GetSentMessages(string userMail);
 
         DirectMessage GetById(int id);
 
