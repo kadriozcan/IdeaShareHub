@@ -1,7 +1,9 @@
 ﻿using Business.Concrete;
+using Business.ValidationRules.FluentValidation;
 using DataAccess.Concrete;
 using DataAccess.Concrete.EntityFramework;
 using Entity.Concrete;
+using FluentValidation.Results;
 using PagedList;
 using System;
 using System.Collections.Generic;
@@ -15,10 +17,37 @@ namespace IdeaShareHub.Controllers
     {
         private readonly TopicManager topicManager = new TopicManager(new EfTopicDal());
         private readonly CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
+        private readonly WriterManager writerManager = new WriterManager(new EfWriterDal());
 
+        [HttpGet]
         public ActionResult WriterProfile()
         {
-            return View();
+            Context c = new Context();
+            string username = (string)Session["Username"];
+            ViewBag.D = username;
+            int writerId = c.Writers.Where(x => x.Username == username).Select(y => y.Id).FirstOrDefault();
+            ViewBag.A = writerId;
+            Writer writerValue = writerManager.GetById(writerId);
+            return View(writerValue);
+        }
+        [HttpPost]
+        public ActionResult WriterProfile(Writer writer)
+        {
+            WriterValidator validator = new WriterValidator();
+            ValidationResult validationResult = validator.Validate(writer);
+            if (validationResult.IsValid)
+            {
+                writerManager.Update(writer);
+                return RedirectToAction("WriterProfile");
+            }
+            else
+            {
+                foreach (var error in validationResult.Errors)
+                {
+                    ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
+                }
+                return View();
+            }
         }
 
         public ActionResult WriterTopics()
