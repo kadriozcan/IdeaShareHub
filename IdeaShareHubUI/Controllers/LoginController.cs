@@ -15,6 +15,7 @@ namespace IdeaShareHub.Controllers
     {
         private readonly AdminManager _adminManager = new AdminManager(new EfAdminDal());
         private readonly WriterManager _writerManager = new WriterManager(new EfWriterDal());
+        private readonly WriterLoginManager _writerLoginManager = new WriterLoginManager(new EfWriterDal());
 
 
         [HttpGet]
@@ -47,7 +48,7 @@ namespace IdeaShareHub.Controllers
         [HttpPost]
         public ActionResult WriterLogin(Writer writer)
         {
-            Writer writerUserInfo = _writerManager.GetWriterInfo(writer);
+            Writer writerUserInfo = _writerLoginManager.GetWriter(writer.Username, writer.Password);
             if (writerUserInfo != null)
             {
                 FormsAuthentication.SetAuthCookie(writerUserInfo.Username, false);
