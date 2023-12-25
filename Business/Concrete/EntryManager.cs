@@ -33,6 +33,11 @@ namespace Business.Concrete
             return _entryDal.GetAll();
         }
 
+        public List<Entry> GetAll(string p)
+        {
+            return _entryDal.GetListByFilter(x => x.BodyText.Contains(p));
+        }
+
         public List<Entry> GetAllByWriter(int id)
         {
 

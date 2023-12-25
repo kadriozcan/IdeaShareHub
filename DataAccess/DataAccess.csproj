@@ -128,6 +128,10 @@
     <Compile Include="Migrations\202311291017516_add_admin.designer.cs">
       <DependentUpon>202311291017516_add_admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312251822496_entries_fix.cs" />
+    <Compile Include="Migrations\202312251822496_entries_fix.designer.cs">
+      <DependentUpon>202312251822496_entries_fix.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -183,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311291017516_add_admin.resx">
       <DependentUpon>202311291017516_add_admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312251822496_entries_fix.resx">
+      <DependentUpon>202312251822496_entries_fix.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
