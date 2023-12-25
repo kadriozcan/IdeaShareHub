@@ -16,7 +16,7 @@ namespace DataAccess.Concrete
         public DbSet<About> Abouts { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Contact> Contacts { get; set; }
-        public DbSet<Entry> Contents { get; set; }
+        public DbSet<Entry> Entries { get; set; }
         public DbSet<Topic> Topics { get; set; }
         public DbSet<Writer> Writers { get; set; }
         public DbSet<DirectMessage> DirectMessages { get; set; }

@@ -1,0 +1,19 @@
+﻿@using Entity.Concrete
+@model List<Entry>
+@{
+    ViewBag.Title = "GetByTopic";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@using (Html.BeginForm("GetAll", "Entry", FormMethod.Post))
+{
+    <p>Search Here</p>
+    @Html.TextBox("p")
+    <input type="submit" value="Search" />
+}
+
+@foreach (Entry entry in Model)
+{
+    <p>@entry.BodyText</p>
+}
+
+

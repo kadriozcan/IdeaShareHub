@@ -2830,6 +2830,8 @@
     <Content Include="Views\Default\Index.cshtml" />
     <Content Include="Views\WriterPanel\AllTopics.cshtml" />
     <Content Include="Views\WriterPanelEntry\AddEntry.cshtml" />
+    <Content Include="Views\Entry\Index.cshtml" />
+    <Content Include="Views\Entry\GetAll.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

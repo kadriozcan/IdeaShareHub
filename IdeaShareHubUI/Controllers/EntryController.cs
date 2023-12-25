@@ -1,4 +1,5 @@
 ﻿using Business.Concrete;
+using DataAccess.Concrete;
 using DataAccess.Concrete.EntityFramework;
 using Entity.Concrete;
 using System;
@@ -17,6 +18,12 @@ namespace IdeaShareHub.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        public ActionResult GetAll(string p="")
+        {
+            List<Entry> entries = entryManager.GetAll(p);
+            return View(entries);
         }
 
         public ActionResult GetByTopic(int id)

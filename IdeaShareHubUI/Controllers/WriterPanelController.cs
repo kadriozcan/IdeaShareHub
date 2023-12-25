@@ -122,7 +122,7 @@ namespace IdeaShareHub.Controllers
 
         public ActionResult AllTopics(int p = 1)
         {
-            IEnumerable<Topic> allTopics = topicManager.GetAll().ToPagedList(p, 3);
+            IEnumerable<Topic> allTopics = topicManager.GetAll().ToPagedList(p, 7);
             return View(allTopics);
         }
 

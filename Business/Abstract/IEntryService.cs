@@ -11,6 +11,8 @@ namespace Business.Abstract
     {
         List<Entry> GetAll();
 
+        List<Entry> GetAll(string p);
+
         Entry GetById(int id);
 
         List<Entry> GetListByTopic(int id);
