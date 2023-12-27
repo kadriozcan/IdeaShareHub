@@ -19,6 +19,13 @@ namespace IdeaShareHub.Controllers
         private readonly CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
         private readonly WriterManager writerManager = new WriterManager(new EfWriterDal());
 
+        public PartialViewResult UserDetailsPartial()
+        {
+            string currentUsername = (string)Session["Username"];
+            Writer currentUser = writerManager.GetByUsername(currentUsername);
+            return PartialView(currentUser);
+        }
+
         [HttpGet]
         public ActionResult WriterProfile()
         {

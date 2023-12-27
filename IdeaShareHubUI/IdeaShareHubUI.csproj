@@ -2835,6 +2835,10 @@
     <Content Include="Views\Entry\Index.cshtml" />
     <Content Include="Views\Entry\GetAll.cshtml" />
     <Content Include="Views\Chart\Index.cshtml" />
+    <Content Include="Views\Authorization\Index.cshtml" />
+    <Content Include="Views\Authorization\AddAdmin.cshtml" />
+    <Content Include="Views\Authorization\UpdateAdmin.cshtml" />
+    <Content Include="Views\WriterPanel\UserDetailsPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
