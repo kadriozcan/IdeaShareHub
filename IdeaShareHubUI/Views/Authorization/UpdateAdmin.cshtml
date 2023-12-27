@@ -1,0 +1,28 @@
+﻿@using Entity.Concrete
+@model Admin
+
+@{
+    ViewBag.Title = "UpdateAdmin";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<br />
+<h2>Update @Model.Username</h2>
+
+@using (Html.BeginForm("UpdateAdmin", "Authorization", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Admin Username")
+        @Html.TextBoxFor(a => a.Username, new { @class = "form-control" })
+        <br />
+        @Html.Label("Password")
+        @Html.TextBoxFor(a => a.Password, new { @class = "form-control" })
+        <br />
+        @Html.Label("Role")
+        @Html.TextBoxFor(a => a.Role, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-info">Save</button>
+    </div>
+}
+
