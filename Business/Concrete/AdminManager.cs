@@ -20,7 +20,7 @@ namespace Business.Concrete
 
         public void Add(Admin admin)
         {
-            throw new NotImplementedException();
+            _adminDal.Add(admin);
         }
 
         public void Delete(Admin admin)
@@ -45,7 +45,7 @@ namespace Business.Concrete
 
         public void Update(Admin admin)
         {
-            throw new NotImplementedException();
+            _adminDal.Update(admin);
         }
     }
 }
