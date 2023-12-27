@@ -21,7 +21,7 @@ namespace IdeaShareHub.Controllers
             return View(topics);
         }
 
-        public PartialViewResult Index(int id = 0)
+        public PartialViewResult Index(int id = 10)
         {
             List<Entry> entries = _entryManager.GetListByTopic(id);
             Topic topic = _topicManager.GetById(id);
