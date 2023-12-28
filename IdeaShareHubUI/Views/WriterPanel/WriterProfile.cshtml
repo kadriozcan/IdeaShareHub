@@ -30,6 +30,7 @@
         @Html.TextBoxFor(w => w.Password, new { @class = "form-control" })
         @Html.ValidationMessageFor(w => w.Password)
         <br />
+        <div><img src="@Model.Image" alt="Image" style="max-width: 100%; max-height: 150px; margin-bottom: 10px;" /></div>
         @Html.Label("Image Link")
         @Html.TextBoxFor(w => w.Image, new { @class = "form-control" })
         @Html.ValidationMessageFor(w => w.Image)

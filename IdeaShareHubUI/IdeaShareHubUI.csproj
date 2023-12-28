@@ -2840,6 +2840,7 @@
     <Content Include="Views\Authorization\AddAdmin.cshtml" />
     <Content Include="Views\Authorization\UpdateAdmin.cshtml" />
     <Content Include="Views\WriterPanel\UserDetailsPartial.cshtml" />
+    <Content Include="Views\WriterPanelEntry\GetEntriesByTopic.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

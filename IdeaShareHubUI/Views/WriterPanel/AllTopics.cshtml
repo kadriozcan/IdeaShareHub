@@ -24,6 +24,13 @@
         </div><!-- /.container-fluid -->
     </section>
 
+    @using (Html.BeginForm("AllTopics", "WriterPanel", FormMethod.Post))
+    {
+        <input type="text" name="p" placeholder="Search Medicine" />
+        <input type="submit" value="Search"/>
+        <input type="submit" value="Clear Filter" onclick="this.form.p.value='';" />
+    }
+    <br/>
     <!-- Main content -->
     <section class="content">
 
@@ -33,18 +40,19 @@
                 <table class="table table-striped projects">
                     <thead>
                         <tr>
-                            <th style="width: 1%">
+                            <th style="width: 5%">
                                 #
                             </th>
-                            <th style="width: 20%">
+                            <th style="width: 30%">
                                 Name
                             </th>
-                            <th style="width: 15%">
+                            @*<th style="width: 15%">
                                 Writer
-                            </th>
-                            <th style="width: 15%" class="text-center">
+                            </th>*@
+                            <th style="width: 20%" class="text-center">
                                 Category
                             </th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -63,19 +71,19 @@
                                         @(((DateTime)topic.CreatedAt).ToString("MM-dd-yyyy"))
                                     </small>
                                 </td>
-                                <td>
-                                    <ul class="list-inline">
+                                <!--<td>-->
+                                    @*<ul class="list-inline">
                                         <li class="list-inline-item">
                                             <img alt="Avatar" class="table-avatar" src="@topic.Writer.Image" width="50" height="60">
                                             @topic.Writer.Username
                                         </li>
-                                    </ul>
-                                </td>
+                                    </ul>*@
+                                <!--</td>-->
                                 <td class="project-state">
                                     <span class="badge badge-success">@topic.Category.Name</span>
                                 </td>
                                 <td class="project-actions text-right">
-                                    <a class="btn btn-primary btn-sm mx-lg-5 text-md" href="/Default/Topics/@topic.Id">
+                                    <a class="btn btn-primary btn-sm mx-lg-5 text-md" href="/WriterPanelEntry/GetEntriesByTopic/@topic.Id">
                                         <i class="fas fa-folder">
                                         </i>
                                         Entries
@@ -100,7 +108,7 @@
 
 </body>
 </html>
-@Html.PagedListPager((IPagedList)Model, p => Url.Action("AllTopics", new { p }), new PagedListRenderOptions 
+@Html.PagedListPager((IPagedList)Model, np => Url.Action("AllTopics", new { np }), new PagedListRenderOptions 
 { 
     LiElementClasses=new List<string>
     { "page-link"}

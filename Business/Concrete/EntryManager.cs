@@ -11,7 +11,7 @@ namespace Business.Concrete
 {
     public class EntryManager : IEntryService
     {
-        IEntryDal _entryDal;
+        readonly IEntryDal _entryDal;
 
         public EntryManager(IEntryDal entryDal)
         {

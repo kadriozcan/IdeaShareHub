@@ -13,6 +13,7 @@ namespace IdeaShareHub.Controllers
     public class WriterPanelEntryController : Controller
     {
         private readonly EntryManager _entryManager = new EntryManager(new EfEntryDal());
+        private readonly TopicManager _topicManager = new TopicManager(new EfTopicDal());
 
         public ActionResult Index()
         {
@@ -25,6 +26,18 @@ namespace IdeaShareHub.Controllers
             string username = (string)Session["Username"];
             int id = c.Writers.Where(x => x.Username==username).Select(y => y.Id).FirstOrDefault();
             List<Entry> entries = _entryManager.GetAllByWriter(id);
+            return View(entries);
+        }
+
+        public ActionResult GetEntriesByTopic(int id=0)
+        {
+            List<Entry> entries = _entryManager.GetListByTopic(id);
+            Topic topic = _topicManager.GetById(id);
+            if (topic != null)
+            {
+                ViewBag.Topic = topic.Name;
+
+            }
             return View(entries);
         }
 
@@ -46,6 +59,8 @@ namespace IdeaShareHub.Controllers
             _entryManager.Add(entry);
             return RedirectToAction("GetEntries");
         }
+
+
 
     }
 }

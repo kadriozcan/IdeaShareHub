@@ -127,9 +127,9 @@ namespace IdeaShareHub.Controllers
             return RedirectToAction("WriterTopics");
         }
 
-        public ActionResult AllTopics(int p = 1)
+        public ActionResult AllTopics(int np = 1, string p = "")
         {
-            IEnumerable<Topic> allTopics = topicManager.GetAll().ToPagedList(p, 7);
+            IEnumerable<Topic> allTopics = topicManager.GetAll(p).ToPagedList(np, 7);
             return View(allTopics);
         }
 
