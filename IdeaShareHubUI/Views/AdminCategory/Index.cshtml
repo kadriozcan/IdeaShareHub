@@ -6,6 +6,7 @@
 }
 
 
+<h2>Categories</h2>
 <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
 <br />
 <table class="table table-bordered">
@@ -13,7 +14,7 @@
         <th>#</th>
         <th>Name</th>
         <th>Description</th>
-        <th>Topics</th>
+        @*<th>Topics</th>*@
         <th>Update</th>
         <th>Delete</th>
     </tr>
@@ -23,7 +24,7 @@
             <th>@category.Id</th>
             <td>@category.Name</td>
             <td>@category.Description</td>
-            <td><a class="btn btn-primary">Topics</a></td>
+            @*<td><a class="btn btn-primary">Topics</a></td>*@
             <td><a href="/AdminCategory/Update/@category.Id" class="btn btn-success">Update</a></td>
             <td><a href="/AdminCategory/Delete/@category.Id" class="btn btn-danger">Delete</a></td>
         </tr>

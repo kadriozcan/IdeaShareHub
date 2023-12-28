@@ -36,9 +36,9 @@
                             <th style="width: 20%">
                                 Name
                             </th>
-                            <th style="width: 15%">
+                            @*<th style="width: 15%">
                                 Writer
-                            </th>
+                            </th>*@
                             <th style="width: 15%" class="text-center">
                                 Category
                             </th>
@@ -65,14 +65,14 @@
                                         @(((DateTime)topic.CreatedAt).ToString("MM-dd-yyyy"))
                                     </small>
                                 </td>
-                                <td>
+                                @*<td>
                                     <ul class="list-inline">
                                         <li class="list-inline-item">
                                             <img alt="Avatar" class="table-avatar" src="@topic.Writer.Image">
                                             @topic.Writer.Username
                                         </li>
                                     </ul>
-                                </td>
+                                </td>*@
                                 <td class="project-state">
                                     <span class="badge badge-success">@topic.Category.Name</span>
                                 </td>

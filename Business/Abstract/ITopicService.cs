@@ -11,6 +11,8 @@ namespace Business.Abstract
     {
         List<Topic> GetAll();
 
+        List<Topic> GetAll(string p);
+
         List<Topic> GetAllByWriter(int id);
 
         Topic GetById(int id);
